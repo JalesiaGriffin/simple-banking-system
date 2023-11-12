@@ -1,14 +1,13 @@
 package com.banking.system;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class SavingsAccount extends Account{
     private double interestRate;
 
-    public SavingsAccount(int accountNum, String accountHolder, int balance, LocalDate dateAccountOpened, List<Transaction> transactions, double interestRate) {
-        super(accountNum, accountHolder, balance, dateAccountOpened, transactions);
-        this.interestRate = interestRate;
+    public SavingsAccount(int accountNum, String accountHolder, int balance, LocalDate dateAccountOpened) {
+        super(accountNum, accountHolder, balance, dateAccountOpened);
+        this.interestRate = 0.043;
     }
 
     public double getInterestRate() {
