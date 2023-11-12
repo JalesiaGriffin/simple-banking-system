@@ -1,13 +1,15 @@
 package com.banking.system;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class UserInterface {
     private final Scanner scan;
-    private Bank bank;
+    private final Bank bank;
 
     public UserInterface() {
         scan = new Scanner(System.in);
+        bank = new Bank();
     }
 
     public void display(){
@@ -51,17 +53,17 @@ public class UserInterface {
     }
 
     public void processCreateNewCustomer(){
-        System.out.println("Create New Customer");
-        System.out.println("Enter name: ");
+        System.out.println("\nCreate New Customer");
+        System.out.print("Enter name: ");
         String name = scan.nextLine();
 
-        System.out.println("Enter address: ");
+        System.out.print("Enter address: ");
         String address = scan.nextLine();
 
-        System.out.println("Enter phone number: ");
+        System.out.print("Enter phone number: ");
         String phoneNum = scan.nextLine();
 
-        System.out.println("Enter email: ");
+        System.out.print("Enter email: ");
         String email = scan.nextLine();
 
         int userId = bank.generateNewUserId();
@@ -69,7 +71,45 @@ public class UserInterface {
         bank.addCustomer(new Customer(name, address, phoneNum, email, userId));
     }
 
-    public void processCreateNewAccount(){}
+    public void processCreateNewAccount(){
+        Customer customer = null;
+
+        System.out.println("\nNew Account");
+        System.out.print("Enter name: ");
+        String name = scan.nextLine();
+
+        System.out.println("Enter bank user id: ");
+        long userId = scan.nextLong();
+
+        boolean found = false;
+        for (Customer c : bank.getCustomers()) {
+            if (userId == c.getBankUserId()) {
+                customer = c;
+                found = true;
+
+                System.out.print("Account type: ");
+                String type = scan.nextLine();
+
+                if (type.equalsIgnoreCase("Savings")) {
+                    SavingsAccount savings = new SavingsAccount(name, LocalDate.now());
+                    savings.setAccountNum(savings.generateNewAccountNumber());
+                    customer.addAccount(savings);
+                    break;
+                } else if (type.equalsIgnoreCase("Checking")){
+                    CheckingAccount checking = new CheckingAccount(name, LocalDate.now());
+                    checking.setAccountNum(checking.generateNewAccountNumber());
+                    customer.addAccount(checking);
+                    break;
+                } else {
+                    System.out.println("invalid response.");
+                }
+            }
+
+        }
+        if (!found){
+            System.out.println("id not found.");
+        }
+    }
     public void processDepositMoney(){}
     public void processWithdrawMoney(){}
     public void processCheckBalance(){}
