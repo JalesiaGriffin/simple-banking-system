@@ -8,16 +8,12 @@ public class Transaction {
     private String type;
     private LocalDate date;
     private LocalTime time;
-    private String description;
-    private String vendor;
     private double amount;
 
-    public Transaction(String type, LocalDate date, LocalTime time, String description, String vendor, double amount) {
+    public Transaction(String type, LocalDate date, LocalTime time, double amount) {
         this.type = type;
         this.date = date;
         this.time = time;
-        this.description = description;
-        this.vendor = vendor;
         this.amount = amount;
     }
 
@@ -45,22 +41,6 @@ public class Transaction {
         this.time = time;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getVendor() {
-        return vendor;
-    }
-
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
-    }
-
     public double getAmount() {
         return amount;
     }
@@ -71,7 +51,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return String.format("%s|%s|%s|%s|%s", date, time, description, vendor, amount);
+        return String.format("%s|%s|%s|%s", type, date, time, amount);
     }
 
     public static Comparator<Transaction> TransactionDate = new Comparator<Transaction>() {
