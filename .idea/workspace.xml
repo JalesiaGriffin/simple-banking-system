@@ -11,14 +11,14 @@
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/Bank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/UserInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banking/system/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banking/system/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banking/system/CheckingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/CheckingAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banking/system/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banking/system/SavingsAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/SavingsAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banking/system/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banking/system/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banking/system/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
