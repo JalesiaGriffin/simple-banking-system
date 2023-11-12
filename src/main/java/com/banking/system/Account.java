@@ -1,6 +1,8 @@
 package com.banking.system;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Account {
@@ -10,12 +12,12 @@ public abstract class Account {
     private LocalDate dateAccountOpened;
     private List<Transaction> transactions;
 
-    public Account(int accountNum, String accountHolder, int balance, LocalDate dateAccountOpened, List<Transaction> transactions) {
+    public Account(int accountNum, String accountHolder, int balance, LocalDate dateAccountOpened) {
         this.accountNum = accountNum;
         this.accountHolder = accountHolder;
         this.balance = balance;
         this.dateAccountOpened = dateAccountOpened;
-        this.transactions = transactions;
+        this.transactions = new ArrayList<Transaction>();
     }
 
     public int getAccountNum() {
@@ -60,9 +62,11 @@ public abstract class Account {
 
     public void deposit(double amount){
         balance += amount;
+        transactions.add(new Transaction("DEPOSIT", LocalDate.now(), LocalTime.now(), amount));
     }
 
     public void withdraw(double amount){
         balance -= amount;
+        transactions.add(new Transaction("WITHDRAW", LocalDate.now(), LocalTime.now(), amount));
     }
 }
